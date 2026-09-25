@@ -2,6 +2,20 @@
 
 All notable changes to the `sf-core` plugin are documented here.
 
+## 0.7.0 - 2026-09-25
+
+- `sf-flow-deprecation-review`: dropped the `MetadataComponentDependency`
+  Tooling API check from the dependency check in step 4 — after repeated
+  runs it was found to reliably return zero rows for Flow references, so the
+  static source grep is now the sole dependency check.
+- The Excel workbook now has three sheets instead of two: `Review`,
+  `Information` (run metadata + outcome legend only), and a new `Notes`
+  sheet holding caveats, known limitations, and tracking/prior-sign-off
+  context that previously cluttered the Information sheet.
+- Column A labels on the `Information` and `Notes` sheets are now bold, and
+  the blank row that used to separate the outcome-legend intro line from its
+  two legend entries has been removed.
+
 ## 0.6.0 - 2026-09-25
 
 - `sf-flow-deprecation-review`: simplified the sign-off outcome legend from
